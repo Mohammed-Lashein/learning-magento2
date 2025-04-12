@@ -19,3 +19,10 @@ src/app/code/Pulsestorm/Nofrillslayout : This is the code from [Alana storm book
 
 Note that I am also reading in both Adobe docs (it is really not that beginner friendly) and the book Magento2 developer's guide (it has some obsolete concepts, but it is well structured)
 
+____
+# Regarding .gitignore file
+I tried to git track some folders in an untracked folder (the src dir specifically) but I couldn't do that . 
+So I am sticking to `git add -f <dir-path>` . 
+
+I just wanted to note that `.gitignore` has some content that you needn't worry about . 
+
