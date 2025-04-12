@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!-- Whenever you encounter this interface in the code, just use the class of specified
+type -->
+    <preference for='Macademy\Jumpstart\Api\CategoryInterface' type='Macademy\Jumpstart\Model\Category'/>
+</config>
