@@ -40,13 +40,21 @@ class Index implements HttpGetActionInterface {
     AbstractBlock) */
     $layout = $objManager->get(\Magento\Framework\View\Layout::class);
     $parentTemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
-    $parentTemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/parent.phtml");
+    $parentTemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/user/parent.phtml");
 
+    $child1TemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
+    $child1TemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/user/child1.phtml");
+
+
+    $child2TemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
+    $child2TemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/user/child2.phtml");
+
+
+    $parentTemplateBlock->append($child1TemplateBlock);
+    $parentTemplateBlock->append($child2TemplateBlock);
     echo $parentTemplateBlock->toHtml();
 
-    $childTemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
-    $childTemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/child.phtml");
-    echo $childTemplateBlock->toHtml();
+    # echo $child1TemplateBlock->toHtml();
     exit;
 }
 
