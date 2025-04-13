@@ -50,7 +50,7 @@ class Index implements HttpGetActionInterface {
     $objManager = \Magento\Framework\App\ObjectManager::getInstance();
     /* Note that we are creating a template block (hence Template class is extending
     AbstractBlock) */
-    $block = $objManager->get(\Magento\Framework\View\Element\Template::class);
+    $block = $objManager->get(\Pulsestorm\Nofrillslayout\Block\Chapter1\User\Template::class);
     $block->setTemplate('Pulsestorm_Nofrillslayout::chapter1/user/hello.phtml');
     echo $block->toHtml();
     exit;

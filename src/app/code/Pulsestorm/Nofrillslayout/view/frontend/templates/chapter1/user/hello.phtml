@@ -1,0 +1,10 @@
+<?php $all_fish = $block->getFish() ?>
+<h1>
+    Hello from my 1st manual tpl
+</h1>
+<ul>
+    <?php foreach($all_fish as $fish):  ?>
+        <li><?= $block->escapeHtml($fish); ?></li>
+    <?php endforeach;  ?>
+
+</ul>
