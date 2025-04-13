@@ -47,8 +47,14 @@ class Index implements HttpGetActionInterface {
     // Optional: set a template file if needed
     // $block->setTemplate('Pulsestorm_Nofrillslayout::hello.phtml');
 
-    // Output block HTML
-    $block = new Hello2;
+    $objManager = \Magento\Framework\App\ObjectManager::getInstance();
+    /*
+        Here we are creating a text block .
+        How did I know that ?
+        => The class \Magento\Framework\View\Element\Text extends AbstractBlock class
+    */
+    $block = $objManager->get(\Magento\Framework\View\Element\Text::class);
+    $block->setText('hello txt block !');
     echo $block->toHtml();
     exit;
 }
