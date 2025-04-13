@@ -48,16 +48,10 @@ class Index implements HttpGetActionInterface {
     // $block->setTemplate('Pulsestorm_Nofrillslayout::hello.phtml');
 
     $objManager = \Magento\Framework\App\ObjectManager::getInstance();
-    /*
-        Here we are creating a text block .
-        How did I know that ?
-        => The class \Magento\Framework\View\Element\Text extends AbstractBlock class
-    */
-    $block = $objManager->get(\Magento\Framework\View\Element\Text::class);
-    // It seems that setText doesn't sanitize the output ! This is expected since this
-    // method is expected to render HTML
-    $block->setText('<i>hello txt block</i> !');
-    // toHtml() Will render the text passed to the setText()
+    /* Note that we are creating a template block (hence Template class is extending
+    AbstractBlock) */
+    $block = $objManager->get(\Magento\Framework\View\Element\Template::class);
+    $block->setTemplate('Pulsestorm_Nofrillslayout::chapter1/user/hello.phtml');
     echo $block->toHtml();
     exit;
 }
