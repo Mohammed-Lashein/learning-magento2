@@ -36,6 +36,11 @@ ___
     // toHtml() Will render the text passed to the setText()
     echo $block->toHtml();
     exit;
-
 ```
+___
+**Note 2**
+How are we using `$escaper` in a template file even though it is not manually injected by us in the template Block class, and also I don't see a file for `\Magento\Framework\Escaper` ?  
+=> Actually in magento2 code in github the class exists, but we are able to use it here even though I don't see the place where the class code is present . 
+
+Note that we should default to using `$escaper` instead of `$block->escapeHtml()` as the latter is deprecated . 
 
