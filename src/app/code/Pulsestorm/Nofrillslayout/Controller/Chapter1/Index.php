@@ -39,9 +39,14 @@ class Index implements HttpGetActionInterface {
     /* Note that we are creating a template block (hence Template class is extending
     AbstractBlock) */
     $layout = $objManager->get(\Magento\Framework\View\Layout::class);
-    $block = $layout->createBlock(\Magento\Framework\View\Element\Text::class);
-    $block->setText("<h1>hello from a block within a layout !</h1>");
-    echo $block->toHtml();
+    $parentTemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
+    $parentTemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/parent.phtml");
+
+    echo $parentTemplateBlock->toHtml();
+
+    $childTemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
+    $childTemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/child.phtml");
+    echo $childTemplateBlock->toHtml();
     exit;
 }
 
