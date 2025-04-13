@@ -54,7 +54,10 @@ class Index implements HttpGetActionInterface {
         => The class \Magento\Framework\View\Element\Text extends AbstractBlock class
     */
     $block = $objManager->get(\Magento\Framework\View\Element\Text::class);
-    $block->setText('hello txt block !');
+    // It seems that setText doesn't sanitize the output ! This is expected since this
+    // method is expected to render HTML
+    $block->setText('<i>hello txt block</i> !');
+    // toHtml() Will render the text passed to the setText()
     echo $block->toHtml();
     exit;
 }
