@@ -33,31 +33,14 @@ class Index implements HttpGetActionInterface {
     //     // return $this->pageFactory->create();
     // }
 
-    public function execute()
-{
-    // Create a page result object
-    // $page = $this->pageFactory->create();
-
-    // Get layout from the page
-    // $layout = $page->getLayout();
-
-    // Create block the Magento way
-    // $block = $layout->createBlock(Hello::class);
-
-    // Optional: set a template file if needed
-    // $block->setTemplate('Pulsestorm_Nofrillslayout::hello.phtml');
-
-    if (class_exists(\Magento\Framework\Escaper::class)) {
-        echo 'Escaper is available!';
-    } else {
-        echo 'Escaper is missing!';
-    }
+    public function execute() {
 
     $objManager = \Magento\Framework\App\ObjectManager::getInstance();
     /* Note that we are creating a template block (hence Template class is extending
     AbstractBlock) */
-    $block = $objManager->get(\Pulsestorm\Nofrillslayout\Block\Chapter1\User\Template::class);
-    $block->setTemplate('Pulsestorm_Nofrillslayout::chapter1/user/hello.phtml');
+    $layout = $objManager->get(\Magento\Framework\View\Layout::class);
+    $block = $layout->createBlock(\Magento\Framework\View\Element\Text::class);
+    $block->setText("<h1>hello from a block within a layout !</h1>");
     echo $block->toHtml();
     exit;
 }
