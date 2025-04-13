@@ -10,6 +10,7 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\View\Result\Page;
 use Pulsestorm\Nofrillslayout\Block\Chapter1\Hello;
+use Pulsestorm\Nofrillslayout\Block\Chapter1\Hello2;
 
 class Index implements HttpGetActionInterface {
     private PageFactory $pageFactory;
@@ -47,7 +48,7 @@ class Index implements HttpGetActionInterface {
     // $block->setTemplate('Pulsestorm_Nofrillslayout::hello.phtml');
 
     // Output block HTML
-    $block = new Hello;
+    $block = new Hello2;
     echo $block->toHtml();
     exit;
 }
