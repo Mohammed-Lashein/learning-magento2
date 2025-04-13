@@ -47,6 +47,12 @@ class Index implements HttpGetActionInterface {
     // Optional: set a template file if needed
     // $block->setTemplate('Pulsestorm_Nofrillslayout::hello.phtml');
 
+    if (class_exists(\Magento\Framework\Escaper::class)) {
+        echo 'Escaper is available!';
+    } else {
+        echo 'Escaper is missing!';
+    }
+
     $objManager = \Magento\Framework\App\ObjectManager::getInstance();
     /* Note that we are creating a template block (hence Template class is extending
     AbstractBlock) */

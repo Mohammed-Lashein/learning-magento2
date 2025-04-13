@@ -4,7 +4,16 @@
 </h1>
 <ul>
     <?php foreach($all_fish as $fish):  ?>
-        <li><?= $block->escapeHtml($fish); ?></li>
+        <li><?=
+            // $block->escapeHtml($fish);
+            /**
+             * @var \Magento\Framework\Escaper $escaper
+             */
+            $escaper->escapeHtml($fish)
+            ?></li>
     <?php endforeach;  ?>
 
 </ul>
+<p>
+    pudding
+</p>
