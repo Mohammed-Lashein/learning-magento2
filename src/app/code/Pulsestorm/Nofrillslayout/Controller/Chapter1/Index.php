@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 // ===== IMPORTANT !  ======
 // Adding namespace is mandatory otherwise the controller won't work !
-namespace Pulsestorm\Nofrillslayout\Controller\Chapter1And2;
+namespace Pulsestorm\Nofrillslayout\Controller\Chapter1;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\PageFactory;
