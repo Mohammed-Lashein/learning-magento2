@@ -12,7 +12,7 @@
     <router id="standard">
         <route id='nofrillslayout' frontName='nofrillslayout'>
         <!-- The module that is responsible for responding to requests
-        directed to /jumpstart  -->
+        directed to /nofrillslayout  -->
             <module name="Pulsestorm_Nofrillslayout"/>
         </route>
     </router>
