@@ -43,4 +43,25 @@ How are we using `$escaper` in a template file even though it is not manually in
 => Actually in magento2 code in github the class exists, but we are able to use it here even though I don't see the place where the class code is present . 
 
 Note that we should default to using `$escaper` instead of `$block->escapeHtml()` as the latter is deprecated . 
+___
+**Note 3**
+If we use a duplicate name for a template block, it will return an error because each block name (which happens to be the block id) should be unique 
+```php
+ $child1TemplateBlock = $layout->createBlock(
+        \Magento\Framework\View\Element\Template::class,
+        'pulsestorm_nofrills_child1'
+    );
+    $child1TemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/user/child1.phtml");
+
+
+    $child2TemplateBlock = $layout->createBlock(
+        \Magento\Framework\View\Element\Template::class,
+        'pulsestorm_nofrills_child1'
+        /* Throws an Exception !
+        Exception #0 (Magento\Framework\Exception\LocalizedException): An element with a
+        "pulsestorm_nofrills_child1" ID already exists.
+         */
+    );
+    $child2TemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/user/child2.phtml");
+```
 
