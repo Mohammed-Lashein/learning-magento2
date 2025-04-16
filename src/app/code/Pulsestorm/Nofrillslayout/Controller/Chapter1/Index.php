@@ -38,7 +38,7 @@ class Index implements HttpGetActionInterface {
     $objManager = \Magento\Framework\App\ObjectManager::getInstance();
     /* Note that we are creating a template block (hence Template class is extending
     AbstractBlock) */
-    $layout = $objManager->get(\Magento\Framework\View\Layout::class);
+    $layout = $objManager->get(\Pulsestorm\Nofrillslayout\Framework\view\Layout::class);
     $parentTemplateBlock = $layout->createBlock(
         \Magento\Framework\View\Element\Template::class,
         'pulsestorm_nofrills_parent'
@@ -63,17 +63,25 @@ class Index implements HttpGetActionInterface {
     $parentTemplateBlock->append($child1TemplateBlock);
     $parentTemplateBlock->append($child2TemplateBlock);
 
+    /* Inset container into layout structure
+    public function addContainer($name, $label, array $options = [], $parent = '', $alias = '') */
     $layout->addContainer('top', 'the top level container');
-    // Magento\Framework\View\Layout\Data\Structure
-    /* NOTE : (todo) change the layout instance to be from our custom layout . I just
-    want to see the error to make sure that having a change is necessary  */
-    $structure = $layout->getStructure();
+    $structure = $layout->getStructure(); // Our custom magento method to expose $structure property from \Magento\Framework\View\Layout
+    // I even inspected that class code myself and didn't find a getter to access that property
 
+    /**
+     * @var \Magento\Framework\View\Layout\Data\Structure $structure
+     */
     // From Magento\Framework\Data\Structure
     // public function setAsChild($elementId, $parentId, $alias = '', $position = null)
     $structure->setAsChild('pulsestorm_nofrills_parent', 'top');
-    $layout->generateElements();
+    $layout->generateElements(); // explained in later chapters !
+    /* The writer mentioned that generateElements() is just a way of telling magento :
+    Hey magento, get ready because we are about to ouput the layout */
+
+    // Hey magento, please give us the final rendered string for the layout obj
     echo $layout->getOutput();
+
 
 
     # echo $parentTemplateBlock->toHtml();
