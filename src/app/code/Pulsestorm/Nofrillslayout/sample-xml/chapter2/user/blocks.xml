@@ -35,12 +35,12 @@
                     Choco pudding
                 </argument>
                 <argument name='my_amazing_array' xsi:type='array'>
-                    <item name='react_item-1' xsi:type='string'>
+                    <orange name='react_item-1' xsi:type='string'>
                         item 1
-                    </item>
-                    <item name='react_item-2' xsi:type='string'>
+                    </orange>
+                    <orange name='react_item-2' xsi:type='string'>
                         item 2
-                    </item>
+                    </orange>
                 </argument>
             </arguments>
 
