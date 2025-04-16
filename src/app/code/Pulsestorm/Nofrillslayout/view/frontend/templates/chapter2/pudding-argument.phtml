@@ -1,0 +1,18 @@
+<?php
+
+echo "Printed with getData: " .  $block->getData('the_choco_pudding');
+echo "<br>";
+echo "Printed with the magic method: " . $block->getTheChocoPudding();
+?>
+
+<ul>
+    <?php foreach ($block->getData('my_amazing_array') as $item):?>
+        <li>
+            <?= $item ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<?php
+// alternative syntax
+var_dump($block->getMyAmazingArray());
+?>

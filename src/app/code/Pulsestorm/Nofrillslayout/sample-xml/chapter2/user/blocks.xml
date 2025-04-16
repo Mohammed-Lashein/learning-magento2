@@ -9,7 +9,7 @@
         name="pulsestorm_nofrills_chapter2_block2"
         template="Pulsestorm_Nofrillslayout::chapter2/block2.phtml">
     </block>     -->
-     <block
+     <!-- <block
         class="Magento\Framework\View\Element\Template"
         name="pulsestorm_nofrills_chapter2_parent"
         template="Pulsestorm_Nofrillslayout::chapter2/parent.phtml">
@@ -18,5 +18,31 @@
         name="pulsestorm_nofrills_chapter2_child"
         template="Pulsestorm_Nofrillslayout::chapter2/child.phtml">
     </block>
-    </block>
+    </block> -->
+     <block
+        class="Magento\Framework\View\Element\Template"
+        name="pulsestorm_nofrills_chapter2_parent"
+        template="Pulsestorm_Nofrillslayout::chapter2/pudding-argument.phtml">
+            <arguments>
+                <argument
+                name='the_choco_pudding'
+                xsi:type='string'
+                >
+                <!-- an error will be thrown if you don't specify xsi:type ! -->
+                <!-- <argument
+                name='the_choco_pudding'
+                > -->
+                    Choco pudding
+                </argument>
+                <argument name='my_amazing_array' xsi:type='array'>
+                    <item name='react_item-1' xsi:type='string'>
+                        item 1
+                    </item>
+                    <item name='react_item-2' xsi:type='string'>
+                        item 2
+                    </item>
+                </argument>
+            </arguments>
+
+         </block>
 </referenceContainer>
