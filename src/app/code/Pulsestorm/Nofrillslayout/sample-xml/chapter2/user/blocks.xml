@@ -1,7 +1,22 @@
 <referenceContainer name="top">
-    <block
+    <!-- <block
         class="Magento\Framework\View\Element\Template"
         name="pulsestorm_nofrills_chapter2_block1"
         template="Pulsestorm_Nofrillslayout::chapter2/block1.phtml">
     </block>
-</referenceContainer>  
+    <block
+        class="Magento\Framework\View\Element\Template"
+        name="pulsestorm_nofrills_chapter2_block2"
+        template="Pulsestorm_Nofrillslayout::chapter2/block2.phtml">
+    </block>     -->
+     <block
+        class="Magento\Framework\View\Element\Template"
+        name="pulsestorm_nofrills_chapter2_parent"
+        template="Pulsestorm_Nofrillslayout::chapter2/parent.phtml">
+         <block
+        class="Magento\Framework\View\Element\Template"
+        name="pulsestorm_nofrills_chapter2_child"
+        template="Pulsestorm_Nofrillslayout::chapter2/child.phtml">
+    </block>
+    </block>
+</referenceContainer>
