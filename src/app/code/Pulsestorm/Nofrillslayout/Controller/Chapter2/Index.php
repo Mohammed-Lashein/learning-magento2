@@ -24,6 +24,12 @@ class Index implements HttpGetActionInterface {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $layout        = $objectManager->get(\Pulsestorm\Nofrillslayout\Framework\view\Layout::class);
 
+        // fetch the update manager (a special obj) from the layout obj
+        /*
+        Responsibility of the update manager obj :
+            keeping track of the changes a client programmer wants to make to the layout.
+            i.e. It manages the XML updates.
+        */
         $updateManager = $layout->getUpdate();
         $updateManager->addUpdate('<container name="top"></container>');
 
