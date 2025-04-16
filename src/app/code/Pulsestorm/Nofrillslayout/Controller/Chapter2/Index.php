@@ -6,9 +6,9 @@ namespace Pulsestorm\Nofrillslayout\Controller\Chapter2;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\View\Result\PageFactory;
+use Pulsestorm\Nofrillslayout\Controller\Base;
 
-
-class Index implements HttpGetActionInterface {
+class Index extends Base {
     // private PageFactory $pageFactory;
 
     /* You can ignore passing  value to the constructor if you don't need it, but
@@ -31,17 +31,11 @@ class Index implements HttpGetActionInterface {
             i.e. It manages the XML updates.
         */
         $updateManager = $layout->getUpdate();
-        $updateManager->addUpdate('<container name="top"></container>');
+        $container_xml = $this->loadXmlFromSampleXmlFolder('chapter2/user/top-container.xml');
+        $updateManager->addUpdate($container_xml);
 
-        $updateManager->addUpdate("<referenceContainer name='top'>
-                <block
-                    class='\Magento\Framework\View\Element\Template'
-                    name='pulsestorm_nofrills_chapter2_block1'
-                    template='Pulsestorm_Nofrillslayout::chapter2/block1.phtml'
-                >
-                </block>
-            </referenceContainer>
-        ");
+        $block_xml = $this->loadXmlFromSampleXmlFolder('chapter2/user/blocks.xml');
+        $updateManager->addUpdate($block_xml);
 
         /*
             Important : The writer mentioned that we no longer need the generateElements() method, however my code didn't work without it .

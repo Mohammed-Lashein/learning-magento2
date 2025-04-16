@@ -1,0 +1,7 @@
+<referenceContainer name="top">
+    <block
+        class="Magento\Framework\View\Element\Template"
+        name="pulsestorm_nofrills_chapter2_block1"
+        template="Pulsestorm_Nofrillslayout::chapter2/block1.phtml">
+    </block>
+</referenceContainer>  
