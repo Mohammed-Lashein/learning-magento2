@@ -39,7 +39,11 @@ class Index implements HttpGetActionInterface {
     /* Note that we are creating a template block (hence Template class is extending
     AbstractBlock) */
     $layout = $objManager->get(\Magento\Framework\View\Layout::class);
-    $parentTemplateBlock = $layout->createBlock(\Magento\Framework\View\Element\Template::class);
+    $parentTemplateBlock = $layout->createBlock(
+        \Magento\Framework\View\Element\Template::class,
+        'pulsestorm_nofrills_parent'
+    );
+
     $parentTemplateBlock->setTemplate("Pulsestorm_Nofrillslayout::chapter1/user/parent.phtml");
 
     $child1TemplateBlock = $layout->createBlock(
@@ -58,7 +62,21 @@ class Index implements HttpGetActionInterface {
 
     $parentTemplateBlock->append($child1TemplateBlock);
     $parentTemplateBlock->append($child2TemplateBlock);
-    echo $parentTemplateBlock->toHtml();
+
+    $layout->addContainer('top', 'the top level container');
+    // Magento\Framework\View\Layout\Data\Structure
+    /* NOTE : (todo) change the layout instance to be from our custom layout . I just
+    want to see the error to make sure that having a change is necessary  */
+    $structure = $layout->getStructure();
+
+    // From Magento\Framework\Data\Structure
+    // public function setAsChild($elementId, $parentId, $alias = '', $position = null)
+    $structure->setAsChild('pulsestorm_nofrills_parent', 'top');
+    $layout->generateElements();
+    echo $layout->getOutput();
+
+
+    # echo $parentTemplateBlock->toHtml();
 
     # echo $child1TemplateBlock->toHtml();
     exit;

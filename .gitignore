@@ -1,54 +1,55 @@
 /*
-!/app
-/app/etc/env.php
-/app/etc/NonComposerComponentRegistration.php
-/app/etc/db_schema.xml
-/app/etc/di.xml
-/app/etc/vendor_path.php
-!/app/etc/hyva-themes.json
-/app/.htaccess
-/app/autoload.php
-/app/bootstrap.php
-/app/functions.php
-!/composer.*
-!/package.json
-!/package-lock.json
-!/yarn.lock
-!.gitignore
-!README.md
-!readymage.yaml
-!**/.gitkeep
-!/var/.htaccess
-!/vendor/.htaccess
-!/generated/.htaccess
-.idea
-.DS_Store
-!.vscode
-!.prettierrc
-!.github
-.vscode/launch.json
-!logo.png
-!CHANGELOG.md
-!LICENSE.md
-!CONTRIBUTING.md
+!src/app
+!src/app/code
+# /app/etc/env.php
+# /app/etc/NonComposerComponentRegistration.php
+# /app/etc/db_schema.xml
+# /app/etc/di.xml
+# /app/etc/vendor_path.php
+# !/app/etc/hyva-themes.json
+# /app/.htaccess
+# /app/autoload.php
+# /app/bootstrap.php
+# /app/functions.php
+# !/composer.*
+# !/package.json
+# !/package-lock.json
+# !/yarn.lock
+# !.gitignore
+# !README.md
+# !readymage.yaml
+# !**/.gitkeep
+# !/var/.htaccess
+# !/vendor/.htaccess
+# !/generated/.htaccess
+# .idea
+# .DS_Store
+# !.vscode
+# !.prettierrc
+# !.github
+# .vscode/launch.json
+# !logo.png
+# !CHANGELOG.md
+# !LICENSE.md
+# !CONTRIBUTING.md
 
-src/env/*
-src/generated/*
-src/var/*
-src/vendor/*
-src/template/*
-src/setup/*
-src/phpserver/*
-src/bin/*
-dev
-lib
-pub
-sr
-src/vendor
-setup
-!src/pudding
-!src/pudding
-src/pudding/*
-src/pudding/pudding.js
-!src/pudding/pudding.js
-!src/pudding/banana.html
+# src/env/*
+# src/generated/*
+# src/var/*
+# src/vendor/*
+# src/template/*
+# src/setup/*
+# src/phpserver/*
+# src/bin/*
+# dev
+# lib
+# pub
+# sr
+# src/vendor
+# setup
+# !src/pudding
+# !src/pudding
+# src/pudding/*
+# src/pudding/pudding.js
+# !src/pudding/pudding.js
+# !src/pudding/banana.html
