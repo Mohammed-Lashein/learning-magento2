@@ -1,0 +1,49 @@
+<referenceContainer name='top' xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<block
+name='pulsestorm_nofrills_chapter2_page'
+class='\Magento\Framework\View\Element\Template'
+template='Pulsestorm_Nofrillslayout::chapter2/root.phtml'
+>
+    <block
+        name='navigation'
+        class='\Magento\Framework\View\Element\Template'
+        template='Pulsestorm_Nofrillslayout::chapter2/navigation.phtml'
+    >
+    <arguments>
+        <argument name='navigation_items' xsi:type='array'>
+            <item xsi:type='string' name='fruit_item-1'>
+                Home
+            </item>
+            <item xsi:type='string' name='fruit_item-2'>
+                About
+            </item>
+            <item xsi:type='string' name='fruit_item-3'>
+                Etc
+            </item>
+        </argument>
+    </arguments>
+    </block>
+    <block
+        name='content'
+        class='\Magento\Framework\View\Element\Template'
+        template='Pulsestorm_Nofrillslayout::chapter2/content.phtml'
+    >
+    <arguments>
+        <argument name='amazing_content' xsi:type='string'>
+            This is where the content goes
+        </argument>
+    </arguments>
+    </block>
+    <block
+        name='footer'
+        class='\Magento\Framework\View\Element\Template'
+        template='Pulsestorm_Nofrillslayout::chapter2/footer.phtml'
+    >
+    <arguments>
+        <argument xsi:type='string' name='amazing_footer'>
+             2017 ACME widgets
+        </argument>
+    </arguments>
+    </block>
+</block>
+</referenceContainer>

@@ -1,4 +1,4 @@
-<referenceContainer name="top">
+<referenceContainer name="top" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <!-- <block
         class="Magento\Framework\View\Element\Template"
         name="pulsestorm_nofrills_chapter2_block1"
@@ -35,12 +35,12 @@
                     Choco pudding
                 </argument>
                 <argument name='my_amazing_array' xsi:type='array'>
-                    <orange name='react_item-1' xsi:type='string'>
+                    <item name='react_item-1' xsi:type='string'>
                         item 1
-                    </orange>
-                    <orange name='react_item-2' xsi:type='string'>
+                    </item>
+                    <item name='react_item-2' xsi:type='string'>
                         item 2
-                    </orange>
+                    </item>
                 </argument>
             </arguments>
 
