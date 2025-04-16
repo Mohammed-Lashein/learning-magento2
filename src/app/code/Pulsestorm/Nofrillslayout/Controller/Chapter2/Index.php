@@ -22,7 +22,7 @@ class Index implements HttpGetActionInterface {
     public function execute()
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $layout        = $objectManager->get('Magento\Framework\View\Layout');
+        $layout        = $objectManager->get(\Pulsestorm\Nofrillslayout\Framework\view\Layout::class);
         $layout->addContainer('top', 'The top level container');
 
         $blockOne   = $layout->createBlock(
