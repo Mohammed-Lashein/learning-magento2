@@ -21,7 +21,7 @@ class Index extends Base {
     public function execute()
     {
         $pageObj = $this->resultPageFactory->create();
-        $pageObj->addHandle('our_1st_custom_handle');
+        // $pageObj->addHandle('our_1st_custom_handle');
 
         /* I can't find getFullActionName() either in the code or online . It seems that
         it is deprecated however I couldn't find the release that deprecated it  */
