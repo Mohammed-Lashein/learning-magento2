@@ -1,10 +1,12 @@
 <h3>
     Navigation items
 </h3>
-<ul>
-    <?php foreach($block->getData('navigation_items') as $item): ?>
+<ul style="list-style: none; display: flex; gap: 1rem;">
+    <?php foreach($block->getData('navigation_items') as $url => $text): ?>
         <li>
-            <?php echo $item ?>
+            | <a href="/<?php echo $url ?>">
+            <?php echo $text ?>
+            </a> |
         </li>
     <?php endforeach; ?>
 </ul>

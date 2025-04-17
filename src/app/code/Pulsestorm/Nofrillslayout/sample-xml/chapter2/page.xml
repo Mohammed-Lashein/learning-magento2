@@ -11,13 +11,13 @@ template='Pulsestorm_Nofrillslayout::chapter2/root.phtml'
     >
     <arguments>
         <argument name='navigation_items' xsi:type='array'>
-            <item xsi:type='string' name='fruit_item-1'>
+            <item xsi:type='string' name='home'>
                 Home
             </item>
-            <item xsi:type='string' name='fruit_item-2'>
+            <item xsi:type='string' name='aboutPage'>
                 About
             </item>
-            <item xsi:type='string' name='fruit_item-3'>
+            <item xsi:type='string' name='etc-page'>
                 Etc
             </item>
         </argument>
