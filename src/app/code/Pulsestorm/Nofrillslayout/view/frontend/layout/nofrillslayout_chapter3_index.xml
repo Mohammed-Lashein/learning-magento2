@@ -1,2 +1,28 @@
 <page xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="1column">
+    <body>
+        <referenceContainer name='content'>
+            <block
+                name='pulsestorm_nofrills_chapter3_text'
+                class='Magento\Framework\View\Element\Text'
+                >
+                <!--
+                    It is a bit weird that in the above class attribute on using the
+                    value 'Magento\Framework\View\Element\Text' I got an error saying
+                    that that value doesn't match the pattern expected by magento (
+                    where the string should not start with \) .
+
+                    I reviewed the page.xml that we created in the previous chapter homework and found that the FQCN started with a \ and
+                    everything worked with no problems .
+
+                    After insepcting the writer's code, I found that he didn't use
+                    the \ in any block name, so maybe I have to follow his path . 
+                -->
+                <arguments>
+                    <argument name='text' xsi:type='string'>
+                        This is a test from the full action name handle !
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
 </page>
