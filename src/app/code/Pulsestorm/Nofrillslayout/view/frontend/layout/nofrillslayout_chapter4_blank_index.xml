@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+    layout="1column"
+>
+<!-- won't work since we didn't specify either referenceContainer or body tag -->
+<body>
+<referenceContainer name='content'>
+        <block
+            class='Magento\Framework\View\Element\Template'
+            template='Pulsestorm_Nofrillslayout::chapter4/blank/hello.phtml'
+            name='pulsestorm_nofrillslayout_chapter4_blank_hello'
+        >
+
+        </block>
+    </referenceContainer>
+</body>
+</page>

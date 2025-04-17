@@ -1,6 +1,9 @@
 /*
 !src/app
+src/app/*
 !src/app/code
+src/app/code/*
+!src/app/code/**
 # /app/etc/env.php
 # /app/etc/NonComposerComponentRegistration.php
 # /app/etc/db_schema.xml
