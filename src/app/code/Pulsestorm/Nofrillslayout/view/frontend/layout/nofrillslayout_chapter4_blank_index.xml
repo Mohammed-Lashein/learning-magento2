@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <page
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
-    layout="empty"
+    layout="more-empty"
 >
 <body>
-<referenceContainer name='content'>
+<referenceContainer name='our_1st_container'>
         <block
             class='Magento\Framework\View\Element\Template'
             template='Pulsestorm_Nofrillslayout::chapter4/blank/hello.phtml'

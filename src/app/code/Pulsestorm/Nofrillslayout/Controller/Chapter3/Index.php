@@ -35,7 +35,7 @@ class Index extends Base {
         */
         // var_dump($this->request->getActionName());
         // var_dump($this->request->getModuleName());
-        // var_dump($this->request->getFullActionName());
+        // var_dump($this->request->getFullActionName())
         return $pageObj;
     }
 }
