@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
     <title>Pulsestorm Dram</title>
-    <parent>Magento/luma</parent>
+    <!-- The parent theme name was not changed in the admin UI although I changed it
+    here, cleared the cache and even ran setup:upgrade
+    -->
+    <parent>Magento/pudding</parent>
     <media>
         <preview_image/>
     </media>
