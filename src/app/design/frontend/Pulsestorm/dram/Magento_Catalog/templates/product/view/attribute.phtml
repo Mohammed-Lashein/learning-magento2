@@ -15,16 +15,53 @@
 <?php
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
 $_product = $block->getProduct();
-echo "<pre>";
-print_r($_product);
-echo "</pre>";
 // var_dump($_product);
+
+/* From where are these methods coming from ?
+    => in module-catalog/...../catalog_product_view.xml, these are defined as arguments
+    and we have access to them where the args names like 'at_call' are converted to
+    getters .
+
+    Where and how is that done ?
+    => With the help of _underscore method in \Magento\Framework\DataObject (this
+    DataObject is what \Magento\Framework\View\Element\AbstractBlock extends) we are
+    able to have getters for these defined arguments that will be passed (somehow and
+    don't bother by that now !) to our $block .
+
+    Note that this file was provided by the writer as an example of extending the
+    returned output by a magento module (although he didn't explain the code present here . )
+    So I think it is not the correct time to get overwhelmed by it and just pass through !
+*/
+
+
 $_call = $block->getAtCall();
 $_code = $block->getAtCode();
 $_className = $block->getCssClass();
 $_attributeLabel = $block->getAtLabel();
 $_attributeType = $block->getAtType();
 $_attributeAddAttribute = $block->getAddAttribute();
+
+// echo "<pre>";
+// echo "getting _call manually : " . $block->getData("at_call");
+// print_r($_product);
+// echo "helper";
+// var_dump(get_class($_helper));
+// echo "_call";
+// var_dump($_call);
+// echo 'result of calling $_product->$_call()';
+// var_dump($_product->$_call());
+// echo '$_code';
+// var_dump($_code);
+// echo '$_classname';
+// var_dump($_className);
+// echo '$attr label';
+// var_dump($_attributeLabel);
+// echo '$attr type';
+// var_dump($_attributeType);
+// echo '$_attr add attribute';
+// var_dump($_attributeAddAttribute);
+// print_r($_product->getData());
+// echo "</pre>";
 
 if ($_attributeLabel && $_attributeLabel == 'default') {
     $_attributeLabel = $_product->getResource()->getAttribute($_code)->getFrontendLabel();
@@ -43,3 +80,5 @@ if ($_attributeType && $_attributeType == 'text') {
     <div class="value" <?php /* @escapeNotVerified */ echo $_attributeAddAttribute;?>><?php /* @escapeNotVerified */ echo $_attributeValue; ?></div>
 </div>
 <?php endif; ?>
+
+<?php
